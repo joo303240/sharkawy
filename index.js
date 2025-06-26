@@ -1,3 +1,4 @@
+
 const express = require("express");
 const app = express();
 const { Boom } = require('@hapi/boom');
@@ -440,12 +441,13 @@ startBot().catch(err => {
 });
 // سيرفر صغير لإبقاء البوت حي
 
+
 app.get("/", (req, res) => {
   res.send("✅ WhatsApp Bot is alive and running!");
 });
 
-// استخدام المنفذ الذي توفره Replit تلقائيًا (مطلوب)
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🌐 HTTP Server running on port ${PORT} (for UptimeRobot)`);
+  console.log(`🌐 HTTP Server running on port ${PORT}`);
 });
+
