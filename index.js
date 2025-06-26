@@ -13,7 +13,13 @@ const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
 const { promisify } = require('util');
-const ytdlp = require('yt-dlp-exec');
+const ytdlp = require('yt-dlp-exec').default;
+const path = require("path");
+const ytPath = path.join(__dirname, "yt-dlp");
+
+const ytdlpExec = ytdlp.create({
+  binary: ytPath
+});
 
 const execPromise = promisify(exec);
 
